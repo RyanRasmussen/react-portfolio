@@ -23,3 +23,5 @@ This repo will serve as one overall web app, using React Router it will have a n
 * Inventory for games and amiibo
     * Allow multiple users to inventory their own collection
     * Run without a database, use Google Sheets (lambda?)
+* Stock tracking app
+    * Robinhood integration? Doesn't seem likely, but keep an eye out
