@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+.container > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: space-around;
+
+    .title {
+        margin: auto;
+    }
+}
+.clock-container {
+    margin: 15vh auto;
+}
+.clock-face {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 7em;
+}
