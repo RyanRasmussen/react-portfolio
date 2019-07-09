@@ -11,7 +11,7 @@ export default class App extends Component {
             <Router>
                 <Container>
                 <Switch>
-                    <Route exact path="/"  component={ ClockPage } />
+                    <Route exact path="/"  component={() => <ClockPage time={new Date()} /> } />
                 </Switch>
                 </Container>
             </Router>
