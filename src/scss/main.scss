@@ -1,18 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
-.container > div {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: space-around;
+// Fonts
+$timer-font: 'Orbitron', sans-serif;
 
-    .title {
-        margin: auto;
-    }
+// Layout
+#left-bar {
+    position: fixed;
+    padding-top: 4.25em;
+    height: 100%;
+    left: 0.5rem;
 }
-.clock-container {
-    margin: 15vh auto;
+#footer {
+    position: fixed;
+    background-color: #000;
+    bottom: 0;
+    left: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: calc(100% - 1rem);
+    z-index: 1;
+}
+
+body {
+    background: black;
+}
+.container > div, .clock-container {
+    width: 100%;
+}
+.clock-container > div {
+    margin-top: 5vh;
 }
 .clock-face {
-    font-family: 'Orbitron', sans-serif;
+    font-family: $timer-font;
     font-size: 7em;
 }
