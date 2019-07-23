@@ -1,21 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Clock component renders the correct date 1`] = `
-<div>
+<div
+  className="lcars-row lcars-u-8 centered"
+>
   <div
-    className="title"
-  >
-    <h1>
-      Hello world, the current time is:
-    </h1>
-  </div>
-  <div
-    className="clock-container"
+    className="lcars-column"
   >
     <div
-      className="clock-face"
+      className="title"
     >
-      9:18:00 PM
+      <h1>
+        Hello world, the current time is:
+      </h1>
+    </div>
+    <div
+      className="clock-container"
+    >
+      <div
+        className="clock-face"
+      >
+        9:18:00 PM
+      </div>
     </div>
   </div>
 </div>
