@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Header from '../common/header';
+import Layout from '../common/lcarsLayout';
+import Button from '../common/actionButton';
 import {
     Container,
   } from 'reactstrap';
@@ -50,13 +51,11 @@ export default class ClockPage extends Component {
             timer: Date.now() - this.state.start,
             timerReadable: parseInt(this.state.timer / 1000 /60) + ":" + (this.state.timer / 1000 % 60)
         }), 1)
-        console.log("start")
     }
 
     stopTimer() {
         this.setState({ timerRunning: false })
         clearInterval(this.timerCounter)
-        console.log("stop")
     }
 
     resetTimer() {
@@ -64,58 +63,50 @@ export default class ClockPage extends Component {
             timer: 0,
             timerReadable: "0:0.000"
         })
-        console.log("reset")
     }
 
     render() {
+        let leftBtn, rightBtn;
 
-        let start = (this.state.timer === 0) ?
-            <div 
-                className="lcars-element rounded button lcars-golden-tanoi-bg timer-btn start-btn"
+        if (this.state.timer === 0) {
+            leftBtn = <Button 
                 onClick={this.startTimer}
-            >
-                Start
-            </div> :
-            null
-        
-        let resume = (this.state.timer != 0 && !this.state.timerRunning) ?
-            <div 
-                className="lcars-element rounded button lcars-golden-tanoi-bg timer-btn resume-btn"
+                color="golden-tanoi"
+                shape="rounded"
+                otherClass="timer-btn"
+                label="Start"
+            />
+        } else if (this.state.timer != 0 && !this.state.timerRunning) {
+            leftBtn = <Button 
                 onClick={this.startTimer}
-            >
-                Resume
-            </div> :
-            null
-
-        let stop = (this.state.timerRunning) ?
-            <div 
-                className="lcars-element rounded button lcars-dodger-blue-alt-bg timer-btn stop-btn"
+                color="golden-tanoi"
+                shape="rounded"
+                otherClass="timer-btn"
+                label="Resume"
+            />
+        } else if (this.state.timerRunning) {
+            leftBtn = <Button 
                 onClick={this.stopTimer}
-            >
-                Stop
-            </div> :
-            null
+                color="dodger-blue-alt"
+                shape="rounded"
+                otherClass="timer-btn"
+                label="Stop"
+            />
+        }
 
         let reset = (this.state.timer != 0 && !this.state.timerRunning) ?
-            <div 
-                className="lcars-element rounded button lcars-rust-bg timer-btn reset-btn"
+            <Button 
                 onClick={this.resetTimer}
-            >
-                Reset
-            </div> :
+                color="rust"
+                shape="rounded"
+                otherClass="timer-btn"
+                label="Reset"
+            /> :
             null
 
         return (
             <Container>
-                <Header />
-                <div id="left-bar" className="lcars-column start-space lcars-u-1">
-                    <div className="lcars-bar lcars-u-1"></div>
-                </div>
-                <div id="footer" className="lcars-row ">
-                    <div className="lcars-elbow left-top lcars-tan-bg"></div>
-                    <div className="lcars-bar horizontal both-divider bottom"></div>
-                    <div className="lcars-bar horizontal right-end left-divider bottom"></div>
-                </div>
+                <Layout />
                 <div className="lcars-column full-centered">
                     <div className="title">
                         <h1>Hello world, the current time is:</h1>
@@ -131,9 +122,7 @@ export default class ClockPage extends Component {
                                 <div className="lcars-column full-centered fill">
                                     <div className="lcars-row centered">
                                         <div className="lcars-row left-btn right">
-                                            {start}
-                                            {resume}
-                                            {stop}
+                                            {leftBtn}
                                         </div>
                                         <div className="lcars-row right-btn">
                                             {reset}
