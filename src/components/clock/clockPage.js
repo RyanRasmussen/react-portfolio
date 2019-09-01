@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Layout from '../common/lcarsLayout';
 import Button from '../common/actionButton';
+import DatePicker from "react-datepicker";
 import {
     Container,
   } from 'reactstrap';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class ClockPage extends Component {
     constructor(props) {
@@ -14,12 +17,15 @@ export default class ClockPage extends Component {
             timer: 0,
             timerReadable: "0:0.000",
             start: 0,
-            timerRunning: false
+            timerRunning: false,
+            startDate: new Date(),
+            dateDiff: 0
         };
 
         this.startTimer = this.startTimer.bind(this)
         this.stopTimer = this.stopTimer.bind(this)
         this.resetTimer = this.resetTimer.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
@@ -65,8 +71,30 @@ export default class ClockPage extends Component {
         })
     }
 
+    handleChange(date) {
+        let daysDiff;
+        let diff = Math.abs(date.getTime() - this.state.date.getTime());
+        if (date.getTime() > this.state.date.getTime()) {
+            daysDiff = Math.ceil(diff / (24*60*60*1000))
+        } else {
+            daysDiff = Math.floor(diff / (24*60*60*1000))
+        }
+        
+        this.setState({ 
+            startDate: date,
+            dateDiff: daysDiff
+        })
+    }
+
     render() {
-        let leftBtn, rightBtn;
+        const monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+          
+        let leftBtn;
 
         if (this.state.timer === 0) {
             leftBtn = <Button 
@@ -133,6 +161,19 @@ export default class ClockPage extends Component {
                                     >
                                         <div className="timer-face lcars-u-4">
                                             {this.state.timerReadable}
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="lcars-column centered"
+                                    >
+                                        <div className="lcars-row">
+                                            <DatePicker
+                                                selected={this.state.startDate}
+                                                onChange={this.handleChange}
+                                            />
+                                        </div>
+                                        <div className="lcars-row">
+                                            Today's date - {monthNames[this.state.date.getMonth()]} {this.state.date.getDate()}, {this.state.date.getFullYear()} - is {this.state.dateDiff} days away from the selected date.
                                         </div>
                                     </div>
                                 </div>
