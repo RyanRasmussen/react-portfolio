@@ -1,3 +1,4 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -5,6 +6,14 @@ const customStyles = new ExtractTextPlugin('style-[md5:contenthash:hex:6].css');
 const bsStyle = new ExtractTextPlugin("bootstrap.min.css");
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
