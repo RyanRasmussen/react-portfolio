@@ -168,12 +168,13 @@ export default class ClockPage extends Component {
                                     >
                                         <div className="lcars-row">
                                             <DatePicker
+                                                className="lcars-element lcars-dodger-blue-bg right-rounded date-picker"
                                                 selected={this.state.startDate}
                                                 onChange={this.handleChange}
                                             />
                                         </div>
                                         <div className="lcars-row">
-                                            Today's date - {monthNames[this.state.date.getMonth()]} {this.state.date.getDate()}, {this.state.date.getFullYear()} - is {this.state.dateDiff} days away from the selected date.
+                                            Today's date - {monthNames[this.state.date.getMonth()]} {this.state.date.getDate()}, {this.state.date.getFullYear()} - is {this.state.dateDiff} day{this.state.dateDiff === 1 ? '' : 's'} away from the selected date.
                                         </div>
                                     </div>
                                 </div>
