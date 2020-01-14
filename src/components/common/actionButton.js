@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class ActionButton extends Component {
     render() {
-        const { label, color, shape, otherClass } = this.props;
+        const { label, color, shape, otherClass, type } = this.props;
 
         const buttonClass = `lcars-element ${shape || 'rounded'} button lcars-${color || 'pale-canary'}-bg ${otherClass} ${label.toLowerCase()}-btn`
         
@@ -11,6 +11,7 @@ export default class ActionButton extends Component {
             <div 
                 className={buttonClass}
                 onClick={this.props.onClick}
+                type={type}
             >
                 {label}
             </div>
