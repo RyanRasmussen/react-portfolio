@@ -18,7 +18,7 @@ export default class ClockPage extends Component {
             timerReadable: "0:0.000",
             start: 0,
             timerRunning: false,
-            startDate: new Date(),
+            startDate: new Date(this.props.time),
             dateDiff: 0
         };
 
@@ -108,7 +108,7 @@ export default class ClockPage extends Component {
             leftBtn = <Button 
                 onClick={this.startTimer}
                 color="golden-tanoi"
-                shape="rounded"
+                shape="rounded" 
                 otherClass="timer-btn"
                 label="Resume"
             />

@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Clock component renders the correct date 1`] = `
-<div
-  className="lcars-row lcars-u-8 centered"
+<Container
+  tag="div"
 >
+  <Layout />
   <div
-    className="lcars-column"
+    className="lcars-column full-centered"
   >
     <div
       className="title"
@@ -18,11 +19,112 @@ exports[`Clock component renders the correct date 1`] = `
       className="clock-container"
     >
       <div
-        className="clock-face"
+        className="clock-face lcars-row centered"
       >
         9:18:00 PM
       </div>
+      <div
+        className="lcars-row centered"
+      >
+        <div
+          className="timer-btn-container lcars-row"
+        >
+          <div
+            className="lcars-column full-centered fill"
+          >
+            <div
+              className="lcars-row centered"
+            >
+              <div
+                className="lcars-row left-btn right"
+              >
+                <ActionButton
+                  color="golden-tanoi"
+                  label="Start"
+                  onClick={[Function]}
+                  otherClass="timer-btn"
+                  shape="rounded"
+                />
+              </div>
+              <div
+                className="lcars-row right-btn"
+              />
+            </div>
+            <div
+              className="clock-face lcars-column centered"
+            >
+              <div
+                className="timer-face lcars-u-4"
+              >
+                0:0.000
+              </div>
+            </div>
+            <div
+              className="lcars-column centered"
+            >
+              <div
+                className="lcars-row"
+              >
+                <t
+                  allowSameDay={false}
+                  className="lcars-element lcars-dodger-blue-bg right-rounded date-picker"
+                  dateFormat="MM/dd/yyyy"
+                  dateFormatCalendar="LLLL yyyy"
+                  disabled={false}
+                  disabledKeyboardNavigation={false}
+                  dropdownMode="scroll"
+                  inlineFocusSelectedMonth={false}
+                  monthsShown={1}
+                  nextMonthButtonLabel="Next Month"
+                  nextYearButtonLabel="Next Year"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClickOutside={[Function]}
+                  onFocus={[Function]}
+                  onInputClick={[Function]}
+                  onInputError={[Function]}
+                  onKeyDown={[Function]}
+                  onMonthChange={[Function]}
+                  onSelect={[Function]}
+                  onYearChange={[Function]}
+                  preventOpenOnFocus={false}
+                  previousMonthButtonLabel="Previous Month"
+                  previousYearButtonLabel="Previous Year"
+                  readOnly={false}
+                  renderDayContents={[Function]}
+                  selected={2019-07-09T03:18:00.000Z}
+                  shouldCloseOnSelect={true}
+                  showMonthYearPicker={false}
+                  showQuarterYearPicker={false}
+                  showTimeInput={false}
+                  showTimeSelect={false}
+                  strictParsing={false}
+                  timeCaption="Time"
+                  timeInputLabel="Time"
+                  timeIntervals={30}
+                  withPortal={false}
+                />
+              </div>
+              <div
+                className="lcars-row"
+              >
+                Today's date - 
+                July
+                 
+                8
+                , 
+                2019
+                 - is 
+                0
+                 day
+                s
+                 away from the selected date.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</Container>
 `;
