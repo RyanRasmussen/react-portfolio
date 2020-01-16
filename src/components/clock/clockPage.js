@@ -73,6 +73,7 @@ export default class ClockPage extends Component {
 
     handleChange(date) {
         let daysDiff;
+        // How many days are between the date selected and today
         let diff = Math.abs(date.getTime() - this.state.date.getTime());
         if (date.getTime() > this.state.date.getTime()) {
             daysDiff = Math.ceil(diff / (24*60*60*1000))
@@ -94,8 +95,8 @@ export default class ClockPage extends Component {
             "November", "December"
         ];
           
+        // Evaluate the state of the timer and determine which button should render
         let leftBtn;
-
         if (this.state.timer === 0) {
             leftBtn = <Button 
                 onClick={this.startTimer}
