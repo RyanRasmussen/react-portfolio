@@ -12,6 +12,8 @@ export default class TextTransform extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.capitalize = this.capitalize.bind(this);
+        this.lowercase = this.lowercase.bind(this);
+        this.uppercase = this.uppercase.bind(this);
     }
 
     handleChange(event) {
@@ -23,13 +25,30 @@ export default class TextTransform extends Component {
         })
     }
 
-    capitalize(event) {
-        console.log(event);
-        const capitalized = event.replace(/\b\w/g, function(m){ return m.toUpperCase(); })
+    capitalize() {
+        const capText = this.state.textToTransform.toLowerCase();
+        const capitalized = capText.replace(/\b\w/g, function(m){ return m.toUpperCase(); })
         this.setState({
             textToTransform: capitalized
         });
     }
+
+    lowercase() {
+        const lowerText = this.state.textToTransform;
+        const lowercase = lowerText.toLowerCase();
+        this.setState({
+            textToTransform: lowercase
+        });
+    }
+
+    uppercase() {
+        const upperText = this.state.textToTransform;
+        const uppercase = upperText.toUpperCase();
+        this.setState({
+            textToTransform: uppercase
+        });
+    }
+
     render() {
         return (
             <Container>
@@ -37,7 +56,7 @@ export default class TextTransform extends Component {
                 <div className="lcars-column full-centered">
                     <div className="title">
                         <h1>Paste your code below:</h1>
-                        <Form onSubmit={this.capitalize}>
+                        <Form>
                             <textarea 
                                 value={this.state.textToTransform}
                                 onChange={this.handleChange} 
@@ -49,16 +68,19 @@ export default class TextTransform extends Component {
                                     shape="left-rounded"
                                     label="Capitalize"
                                     type="submit"
+                                    onClick={this.capitalize}
                                 />
                                 <Button 
                                     color="danub"
                                     shape="simple"
                                     label="Lowercase"
+                                    onClick={this.lowercase}
                                 />
                                 <Button 
                                     color="atomic-tangerine"
                                     shape="right-rounded"
                                     label="Uppercase"
+                                    onClick={this.uppercase}
                                 />
                             </div>
                         </Form>
