@@ -21,7 +21,7 @@ exports[`Clock component renders the correct date 1`] = `
       <div
         className="clock-face lcars-row centered"
       >
-        9:18:00 PM
+        11:18:00 PM
       </div>
       <div
         className="lcars-row centered"

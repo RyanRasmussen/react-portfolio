@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Layout from '../common/lcarsLayout';
 import Button from '../common/actionButton';
+import moment from 'moment-timezone';
 import DatePicker from "react-datepicker";
 import {
     Container,
@@ -13,12 +14,12 @@ export default class ClockPage extends Component {
         super(props);
         this.state = {
             // We're setting the initial date from the time prop
-            date: new Date(this.props.time),
+            date: moment(this.props.time).toDate(),
             timer: 0,
             timerReadable: "0:0.000",
             start: 0,
             timerRunning: false,
-            startDate: new Date(this.props.time),
+            startDate: moment(this.props.time).toDate(),
             dateDiff: 0
         };
 
@@ -144,7 +145,7 @@ export default class ClockPage extends Component {
                         <div 
                             className="clock-face lcars-row centered"
                         >
-                            {this.state.date.toLocaleTimeString()}
+                            {moment(this.state.date).format('h:mm:ss A')}
                         </div>
                         <div className="lcars-row centered">
                             <div className="timer-btn-container lcars-row">
