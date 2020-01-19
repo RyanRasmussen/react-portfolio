@@ -4,7 +4,8 @@ import { shallow } from 'enzyme';
 import moment from 'moment-timezone';
 
 test('Clock component renders the correct date', () => {
-    const date1 = moment.tz('2019-07-08 21:18:00', 'America/Denver').format();
+    moment.tz.setDefault('MST');
+    const date1 = moment('2019-07-08 09:18:00').format();
 
     console.log(moment(date1).toDate());
 

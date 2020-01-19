@@ -21,7 +21,7 @@ exports[`Clock component renders the correct date 1`] = `
       <div
         className="clock-face lcars-row centered"
       >
-        11:18:00 PM
+        9:18:00 AM
       </div>
       <div
         className="lcars-row centered"
@@ -92,7 +92,7 @@ exports[`Clock component renders the correct date 1`] = `
                   previousYearButtonLabel="Previous Year"
                   readOnly={false}
                   renderDayContents={[Function]}
-                  selected={2019-07-09T03:18:00.000Z}
+                  selected={2019-07-08T16:18:00.000Z}
                   shouldCloseOnSelect={true}
                   showMonthYearPicker={false}
                   showQuarterYearPicker={false}
