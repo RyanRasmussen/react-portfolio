@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Clock component renders the correct date 1`] = `
+exports[`Clock component renders correctly 1`] = `
 <Container
   tag="div"
 >

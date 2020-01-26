@@ -24,6 +24,9 @@ This repo will serve as one overall web app, using React Router it will have a n
     * Text string generator
         * Submit a list and tell the generator what to wrap each line in
         * Ex: add `<p>` and `</p>` tags around a list
+    * To-Do app
+        * Demonstrate CRUD principles
+* Card Matching Game
 * Calculator app
     * A calculator, duh
 * Inventory for games and amiibo
