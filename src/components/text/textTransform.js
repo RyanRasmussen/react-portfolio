@@ -27,7 +27,7 @@ export default class TextTransform extends Component {
 
     capitalize() {
         const capText = this.state.textToTransform.toLowerCase();
-        const capitalized = capText.replace(/\b\w/g, function(m){ return m.toUpperCase(); })
+        const capitalized = capText.replace(/([^a-z])([a-z])(?=[a-z]{2})|^([a-z])/g, function(m){ return m.toUpperCase(); })
         this.setState({
             textToTransform: capitalized
         });
@@ -67,7 +67,6 @@ export default class TextTransform extends Component {
                                     color="pale-canary"
                                     shape="left-rounded"
                                     label="Capitalize"
-                                    type="submit"
                                     onClick={this.capitalize}
                                 />
                                 <Button 

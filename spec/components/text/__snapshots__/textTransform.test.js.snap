@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text transform component renders correctly 1`] = `
+<Container
+  tag="div"
+>
+  <Layout />
+  <div
+    className="lcars-column full-centered"
+  >
+    <div
+      className="title"
+    >
+      <h1>
+        Paste your code below:
+      </h1>
+      <Form
+        tag="form"
+      >
+        <textarea
+          className="lcars-text-box"
+          onChange={[Function]}
+          value=""
+        />
+        <div
+          className="btn-container"
+        >
+          <ActionButton
+            color="pale-canary"
+            label="Capitalize"
+            onClick={[Function]}
+            shape="left-rounded"
+          />
+          <ActionButton
+            color="danub"
+            label="Lowercase"
+            onClick={[Function]}
+            shape="simple"
+          />
+          <ActionButton
+            color="atomic-tangerine"
+            label="Uppercase"
+            onClick={[Function]}
+            shape="right-rounded"
+          />
+        </div>
+      </Form>
+    </div>
+  </div>
+</Container>
+`;
