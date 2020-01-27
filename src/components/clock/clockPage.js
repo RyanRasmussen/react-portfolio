@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import {
     Container,
   } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -189,3 +190,7 @@ export default class ClockPage extends Component {
         )
     }
   };
+
+ClockPage.propTypes = {
+    time: PropTypes.string
+}
