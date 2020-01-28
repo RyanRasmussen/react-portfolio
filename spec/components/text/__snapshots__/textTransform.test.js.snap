@@ -6,7 +6,7 @@ exports[`Text transform component renders correctly 1`] = `
 >
   <Layout />
   <div
-    className="lcars-column full-centered"
+    className="lcars-column full-centered page-wrap"
   >
     <div
       className="title"

@@ -19,13 +19,20 @@ $timer-font: 'Orbitron', sans-serif;
     width: calc(100% - 1rem);
     z-index: 1;
 }
-
 body {
     background: black;
+}
+.lcars-column.full-centered.page-wrap {
+    width: 80%;
+    float: right;
+}
+.title h1 {
+    margin: 0;
 }
 .container > div, .clock-container {
     width: 100%;
 }
+// clock page
 .clock-container > div {
     margin-top: 5vh;
 }
@@ -36,10 +43,30 @@ body {
 .date-picker {
     border-style: none;
 }
+// text transform page
 textarea.lcars-text-box {
-    width: 500px;
+    width: 100%;
     height: 500px;
 }
 .btn-container div {
     margin: 2.5px;
+}
+
+// small devices
+@media (max-width: 576px) {
+    .lcars-u-1 {
+        width: 3rem;
+    }
+    .lcars-elbow {
+        width: 5rem;
+        min-width: 5rem;
+    }
+    .clock-face {
+        font-size: 2em;
+    }
+
+    // Text Transform page
+    textarea.lcars-text-box {
+        height: 250px;
+    }
 }

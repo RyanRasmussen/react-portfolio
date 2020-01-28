@@ -53,7 +53,7 @@ export default class TextTransform extends Component {
         return (
             <Container>
                 <Layout />
-                <div className="lcars-column full-centered">
+                <div className="lcars-column full-centered page-wrap">
                     <div className="title">
                         <h1>Paste your code below:</h1>
                         <Form>

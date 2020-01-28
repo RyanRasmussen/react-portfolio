@@ -138,7 +138,7 @@ export default class ClockPage extends Component {
         return (
             <Container>
                 <Layout />
-                <div className="lcars-column full-centered">
+                <div className="lcars-column full-centered page-wrap">
                     <div className="title">
                         <h1>Hello world, the current time is:</h1>
                     </div>
@@ -162,16 +162,16 @@ export default class ClockPage extends Component {
                                     <div
                                         className="clock-face lcars-column centered"
                                     >
-                                        <div className="timer-face lcars-u-4">
+                                        <div className="timer-face">
                                             {this.state.timerReadable}
                                         </div>
                                     </div>
                                     <div
                                         className="lcars-column centered"
                                     >
-                                        <div className="lcars-row">
+                                        <div className="lcars-row centered">
                                             <DatePicker
-                                                className="lcars-element lcars-dodger-blue-bg right-rounded date-picker"
+                                                className="lcars-element lcars-dodger-blue-bg rounded date-picker"
                                                 selected={this.state.startDate}
                                                 onChange={this.handleChange}
                                             />
