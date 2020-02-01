@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navigation from "./navigation";
+import Menu from "./menu";
 
 export default class Layout extends Component {
     render() {
@@ -7,7 +7,9 @@ export default class Layout extends Component {
             <div className="app-container-layout">
                 <div id="header" className="lcars-row header">
                     <div className="lcars-elbow left-bottom lcars-ruest-bg"></div>
-                    <Navigation />
+                    <div className="lcars-bar horizontal menu">
+                        <Menu />
+                    </div>
                     <div className="lcars-bar horizontal right-end decorated"></div>
                 </div>
                 <div id="left-bar" className="lcars-column start-space lcars-u-1">
