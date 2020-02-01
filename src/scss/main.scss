@@ -34,8 +34,16 @@ body {
 }
 
 // menu
-.menu-container {
+.menu {
+    position: relative;
+    z-index: 1;
+}
+.menu-container.hidden {
+    display: none;
+}
+.menu-container.show {
     width: 100%;
+    height: 90vh;
     margin-top: 2rem;
     background: #000;
 
@@ -45,7 +53,7 @@ body {
 
     #right-bar {
         position: fixed;
-        height: 100%;
+        height: 75%;
         right: 2rem;
         top: 6rem;
     }
