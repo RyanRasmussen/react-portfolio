@@ -1,15 +1,16 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const customStyles = new ExtractTextPlugin('style-[md5:contenthash:hex:6].css');
 const bsStyle = new ExtractTextPlugin("bootstrap.min.css");
 
 module.exports = {
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
-    publicPath: '/'
+    path: path.resolve(__dirname, 'dist/'),
+    filename: './main.[hash].js',
   },
   module: {
     rules: [
@@ -53,6 +54,7 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
-    bsStyle, customStyles
+    bsStyle, customStyles,
+    new CleanWebpackPlugin({cleanStaleWebpackAssets: true})
   ]
 };
