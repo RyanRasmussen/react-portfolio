@@ -11,9 +11,6 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/'
   },
-  devServer: {
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {

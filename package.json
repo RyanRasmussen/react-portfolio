@@ -4,8 +4,8 @@
   "description": "Boilerplate based on article from https://blog.usejournal.com/setting-up-react-webpack-4-babel-7-from-scratch-2019-b771dca2f637. This has been adapted to include reactstrap (bootstrap for React), a component (clock) and load stylesheets via webpack.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --hot --config webpack.dev.js",
+    "build": "webpack --config webpack.production.js",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage"
@@ -36,7 +36,8 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
