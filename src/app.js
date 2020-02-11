@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ClockPage from "./components/clock/clockPage";
-import {
-    Container,
-  } from 'reactstrap';
+import TextTransform from "./components/text/textTransform";
+import moment from 'moment-timezone';
 
 export default class App extends Component {
     render() {
         return (
             <Router>
-                <Container>
                 <Switch>
-                    <Route exact path="/"  component={ ClockPage } />
+                    <Route path="/text" component={TextTransform} />             
+                    <Route exact path="/"  component={() => <ClockPage time={moment().format()} /> } />
                 </Switch>
-                </Container>
             </Router>
         );
     }

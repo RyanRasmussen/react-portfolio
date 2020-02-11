@@ -12,12 +12,21 @@ Portfolio project using Node.js, React, Webpack 4, and Babel 7.
 
 This repo will serve as one overall web app, using React Router it will have a number of different projects included.
 
-* Clock and timer page
-    * Display the current time
-    * A stopwatch and timer
-    * A time diff calculator - calculate the difference between two dates
-* Magic Square app
-    * Create a magic square with the press of a button
+* Developer Toolbox
+    * Clock and timer page
+        * ~~Display the current time~~
+        * ~~A stopwatch and timer~~
+        * ~~A time diff calculator - calculate the difference between two dates~~
+        * TODO: Add conditional (hidden) button options
+        * TODO: Styling, particularly for the calendar
+    * Text transformer
+    * Lorem Ipsum text generator
+    * Text string generator
+        * Submit a list and tell the generator what to wrap each line in
+        * Ex: add `<p>` and `</p>` tags around a list
+    * To-Do app
+        * Demonstrate CRUD principles
+* Card Matching Game
 * Calculator app
     * A calculator, duh
 * Inventory for games and amiibo

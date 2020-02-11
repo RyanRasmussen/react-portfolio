@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clock component renders correctly 1`] = `
+<Container
+  tag="div"
+>
+  <Layout />
+  <div
+    className="lcars-column full-centered page-wrap"
+  >
+    <div
+      className="title"
+    >
+      <h1>
+        Hello world, the current time is:
+      </h1>
+    </div>
+    <div
+      className="clock-container"
+    >
+      <div
+        className="clock-face lcars-row centered"
+      >
+        9:18:00 AM
+      </div>
+      <div
+        className="lcars-row centered"
+      >
+        <div
+          className="timer-btn-container lcars-row"
+        >
+          <div
+            className="lcars-column full-centered fill"
+          >
+            <div
+              className="lcars-row centered"
+            >
+              <div
+                className="lcars-row left-btn right"
+              >
+                <ActionButton
+                  color="golden-tanoi"
+                  label="Start"
+                  onClick={[Function]}
+                  otherClass="timer-btn"
+                  shape="rounded"
+                />
+              </div>
+              <div
+                className="lcars-row right-btn"
+              />
+            </div>
+            <div
+              className="clock-face lcars-column centered"
+            >
+              <div
+                className="timer-face"
+              >
+                0:0.000
+              </div>
+            </div>
+            <div
+              className="lcars-column centered"
+            >
+              <div
+                className="lcars-row centered"
+              >
+                <t
+                  allowSameDay={false}
+                  className="lcars-element lcars-dodger-blue-bg rounded date-picker"
+                  dateFormat="MM/dd/yyyy"
+                  dateFormatCalendar="LLLL yyyy"
+                  disabled={false}
+                  disabledKeyboardNavigation={false}
+                  dropdownMode="scroll"
+                  inlineFocusSelectedMonth={false}
+                  monthsShown={1}
+                  nextMonthButtonLabel="Next Month"
+                  nextYearButtonLabel="Next Year"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClickOutside={[Function]}
+                  onFocus={[Function]}
+                  onInputClick={[Function]}
+                  onInputError={[Function]}
+                  onKeyDown={[Function]}
+                  onMonthChange={[Function]}
+                  onSelect={[Function]}
+                  onYearChange={[Function]}
+                  preventOpenOnFocus={false}
+                  previousMonthButtonLabel="Previous Month"
+                  previousYearButtonLabel="Previous Year"
+                  readOnly={false}
+                  renderDayContents={[Function]}
+                  selected={2019-07-08T16:18:00.000Z}
+                  shouldCloseOnSelect={true}
+                  showMonthYearPicker={false}
+                  showQuarterYearPicker={false}
+                  showTimeInput={false}
+                  showTimeSelect={false}
+                  strictParsing={false}
+                  timeCaption="Time"
+                  timeInputLabel="Time"
+                  timeIntervals={30}
+                  withPortal={false}
+                />
+              </div>
+              <div
+                className="lcars-row"
+              >
+                Today's date - 
+                July
+                 
+                8
+                , 
+                2019
+                 - is 
+                0
+                 day
+                s
+                 away from the selected date.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>
+`;
