@@ -1,3 +1,5 @@
+$breakpoint-phone: 576px;
+
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 // Fonts
@@ -58,7 +60,7 @@ body {
         }
 
         .lcars-element {
-            margin: 5px auto;
+            margin: 5px;
         }
     }
 
@@ -79,7 +81,7 @@ body {
         bottom: 5rem;
         right: 2rem;
         padding-bottom: 0.5rem;
-        width: calc(100% - 7rem);
+        width: calc(100% - 11rem);
         z-index: 1;
     }
 }
@@ -105,7 +107,7 @@ textarea.lcars-text-box {
 }
 
 // small devices
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-phone) {
     .lcars-column.full-centered.page-wrap {
         width: 80%;
     }
@@ -118,6 +120,11 @@ textarea.lcars-text-box {
     }
     .clock-face {
         font-size: 2em;
+    }
+
+    // Menu
+    .menu-container.show #bottom-bar {
+        width: calc(100% - 7rem);
     }
 
     // Text Transform page
