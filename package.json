@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --open --hot --config webpack.dev.js",
     "build": "webpack --config webpack.production.js",
+    "predeploy": "npm run build",
+    "deploy": "deploy.bat",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage"
