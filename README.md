@@ -19,7 +19,7 @@ This repo will serve as one overall web app, using React Router it will have a n
         * ~~A time diff calculator - calculate the difference between two dates~~
         * TODO: Add conditional (hidden) button options
         * TODO: Styling, particularly for the calendar
-    * Text transformer
+    * ~Text transformer~
     * Lorem Ipsum text generator
     * Text string generator
         * Submit a list and tell the generator what to wrap each line in
