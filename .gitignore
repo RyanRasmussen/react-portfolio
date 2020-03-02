@@ -65,6 +65,7 @@ dist/
 
 # Local files
 .DS_Store
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml

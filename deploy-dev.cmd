@@ -1,0 +1,1 @@
+aws s3 sync ./dist/ s3://test-rr-2020 --acl public-read --exclude ".git/*" --delete

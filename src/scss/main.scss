@@ -1,3 +1,5 @@
+$breakpoint-phone: 576px;
+
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 // Fonts
@@ -105,7 +107,7 @@ textarea.lcars-text-box {
 }
 
 // small devices
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-phone) {
     .lcars-column.full-centered.page-wrap {
         width: 80%;
     }
@@ -118,6 +120,11 @@ textarea.lcars-text-box {
     }
     .clock-face {
         font-size: 2em;
+    }
+
+    // Menu
+    .menu-container.show #bottom-bar {
+        width: calc(100% - 7rem);
     }
 
     // Text Transform page
