@@ -60,7 +60,7 @@ body {
         }
 
         .lcars-element {
-            margin: 5px auto;
+            margin: 5px;
         }
     }
 
@@ -81,7 +81,7 @@ body {
         bottom: 5rem;
         right: 2rem;
         padding-bottom: 0.5rem;
-        width: calc(100% - 7rem);
+        width: calc(100% - 11rem);
         z-index: 1;
     }
 }
