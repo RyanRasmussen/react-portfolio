@@ -4,6 +4,8 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    historyApiFallback: true,
+    proxy: {
+      "/api": "http:127.0.0.1:5000"
+    }
   }
 });

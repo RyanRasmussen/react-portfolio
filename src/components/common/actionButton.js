@@ -5,16 +5,16 @@ export default class ActionButton extends Component {
     render() {
         const { label, color, shape, otherClass, type } = this.props;
 
-        const buttonClass = `lcars-element ${shape || 'rounded'} button lcars-${color || 'pale-canary'}-bg ${otherClass} ${label.toLowerCase()}-btn`
+        const buttonClass = `lcars-element ${shape || 'rounded'} button lcars-${color || 'pale-canary'}-bg ${otherClass || ''} ${label.toLowerCase()}-btn`
         
         return (
-            <div 
+            <button 
                 className={buttonClass}
                 onClick={this.props.onClick}
                 type={type}
             >
                 {label}
-            </div>
+            </button>
         )
     }
 }
