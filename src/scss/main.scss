@@ -111,6 +111,31 @@ textarea.lcars-text-box {
     margin: 2.5px;
 }
 
+// lorem ipsum generator
+.lorem-page {
+    form {
+        width: 350px;
+    }
+}
+form div.form-input-cont {
+    margin: 25px;
+    text-align: center;
+}
+div#form-paragraphs {
+    width: 100%;
+
+    input {
+        width: 45px;
+        font-size: 42px;
+        text-align: center;
+    }
+}
+div.generated-text {
+    width: 500px;
+    max-width: 100%;
+    margin: 25px;
+}
+
 // small devices
 @media (max-width: $breakpoint-phone) {
     .lcars-column.full-centered.page-wrap {

@@ -11,13 +11,14 @@ export default class LoremIpsumGen extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            apiResponse: "",
+            generatedText: "",
             numParagraphs: ""
         };
 
         this.callAPI = this.callAPI.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.generateList = this.generateList.bind(this);
     }
     
     callAPI(payload) {
@@ -29,9 +30,8 @@ export default class LoremIpsumGen extends Component {
             body: payload
         })
             .then(res => {
-                res.json()
+                return res.json()
                     .then(body => {
-                        this.setState({ apiResponse: body })
                         return body;
                     })
             })
@@ -55,30 +55,50 @@ export default class LoremIpsumGen extends Component {
         const temp = JSON.stringify({ num: this.state.numParagraphs });
 
         this.callAPI(temp)
-            .then(res => {
-                console.log(res);
-                //this.setState({ apiResponse: res })
+            .then(data => {
+                this.generateList(data);
+                return data;
             })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+
+    generateList(returnedArr) {
+        const mappedText = returnedArr.map(paragraph => {
+            return <p key={paragraph.toString()}>{paragraph}</p>
+        })
+
+        this.setState({
+            generatedText: mappedText
+        })
     }
 
     render() {
         return (
             <Container>
                 <Layout />
-                <div className="lcars-column full-centered page-wrap">
+                <div className="lcars-column full-centered page-wrap lorem-page">
                     <div className="title">
                         <h1>Lorem ipsum generator</h1>
-                        <Form onSubmit={this.handleSubmit}>
-                            <input type="number" className="paragraph-number" onChange={this.handleChange} value={this.state.numParagraphs} />
+                    </div>
+                    <div className="description">
+                        <p>Input how many paragraphs you want to generate.</p>
+                    </div>
+                    <Form onSubmit={this.handleSubmit}>
+                        <div className="form-input-cont" id="form-paragraphs">
+                            <input type="text" className="paragraph-number" onChange={this.handleChange} value={this.state.numParagraphs} />
+                        </div>
+                        <div className="form-input-cont" id="form-btn">
                             <Button 
                                 color="cosmic"
                                 shape="round"
                                 label="Generate"
                             />
-                        </Form>
-                        <div className="generated-text">
-                            {this.state.apiResponse}
                         </div>
+                    </Form>
+                    <div className="generated-text">
+                        {this.state.generatedText}
                     </div>
                 </div>
             </Container>
