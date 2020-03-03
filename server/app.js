@@ -25,5 +25,5 @@ app.use('*',  (req, res)=> {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is listening at http://${process.env.BASE_URL}:${port}/`);
+  console.log(`Server is listening at port ${port}`);
 })
